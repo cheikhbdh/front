@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Landing Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+      <meta content="Coderthemes" name="author">
+      <!-- App favicon -->
+      <link rel="shortcut icon" href="assets/images/favicon.ico">
+      <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+  
+      <!-- App css -->
+      <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+      <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+      <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+  
+  <style>
+      .gradient-title {
+          background: linear-gradient(45deg, #1D374C, #462756);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: bold;
+      }
+  
+      /* Define animation keyframes */
+      @keyframes transformToTravel {
+          0% {
+              transform: scale(1);
+          }
+  
+          50% {
+              transform: scale(1.1);
+          }
+  
+          100% {
+              transform: scale(1) translateX(100px);
+              opacity: 0;
+          }
+      }
+  
+      /* Apply animation to the element */
+      .transform-animation {
+          animation: transformToTravel 3s ease-out forwards;
+      }
+  
+      /* Custom classes based on Coolors colors */
+      .bg-coolors-1 {
+          background-color: #EDF0F5;
+      }
+  
+      .bg-coolors-2 {
+          background-color: #a5a7ab;
+      }
+  
+      .bg-coolors-3 {
+          background-color: #EFF0F8;
+      }
+  
+      .text-coolors-1 {
+          color: #213e54;
+      }
+  
+  
+      .text-coolors-2 {
+          color: #384755;
+      }
+  
+      .text-coolors-3 {
+          color: #462756;
+      }
+  
+  
+      /* Custom logo size */
+      .logo-custom {
+          height: 100px;
+          /* Adjust this value as needed */
+      }
+  
+      /* Adjust logo size on smaller screens */
+      @media (max-width: 768px) {
+          .logo-custom {
+              height: 60px;
+              /* Smaller size for mobile */
+          }
+      }
+  
+      .navbar-fixed {
+          position: fixed;
+          background: transparent;
+      }
+  </style>
+  
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- bundle -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/pages/demo.form-wizard.js"></script>
+
+<script>
+    // Assuming you have an SVG element with the id 'map'
+const svg = d3.select('#map');
+const width = +svg.attr('width');
+const height = +svg.attr('height');
+
+// Define a projection
+const projection = d3.geoMercator()
+  .fitSize([width, height], geojsonData);
+
+// Create a path generator
+const pathGenerator = d3.geoPath().projection(projection);
+
+// Load the GeoJSON file
+d3.json('assets/geoBoundaries-MRT-ADM1_simplified.geojson').then(geojsonData => {
+  // Draw the map
+  svg.selectAll('.country')
+    .data(geojsonData.features)
+    .enter().append('path')
+      .attr('className', 'country')
+      .attr('d', pathGenerator)
+      .attr('fill', 'lightgray') // Default fill, can add logic for color coding
+      .attr('stroke', 'white'); // Stroke color
+
+  // You can add visual effects here such as .on('mouseover', ...) for interactivity
+});
+
+
+
+
+</script>
+
+
+
+  </body>
+</html>

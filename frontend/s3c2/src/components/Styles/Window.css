@@ -1,0 +1,114 @@
+.chat-window {
+  position: fixed;
+  bottom: 0; /* Align to the bottom of the viewport */
+  right: 0; /* Align to the right of the viewport */
+  width: 40%; /* Take up 40% of the viewport width */
+  height: 60vh; /* Adjust the height as needed, here it's set to 60% of the viewport height */
+  background-color: white;
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds shadow to the left side */
+  border-top-left-radius: 10px; /* Rounded corner */
+  border-bottom-left-radius: 10px; /* Rounded corner */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-window {
+    width: 60%; /* Adjust width on smaller devices */
+    height: 70vh; /* Adjust height */
+  }
+}
+
+.webchat-container,
+.messages-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.webchat-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+@media (max-width: 480px) {
+  .chat-window {
+    width: 80%; /* Adjust width for very small devices */
+    height: 80vh; /* Adjust height */
+  }
+}
+/* Scrollbar adjustments */
+.webchat-container::-webkit-scrollbar,
+.messages-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for a cleaner look */
+}
+
+.webchat-container,
+.messages-container {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .chat-window {
+    bottom: 10px;
+    right: 10px;
+    width: calc(100% - 30px);
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    bottom: 5px;
+    right: 5px;
+    width: calc(100% - 10px);
+    border-radius: 5px;
+  }
+}
+
+.webchat-container::-webkit-scrollbar,
+.messages-container::-webkit-scrollbar {
+  display: none;
+}
+
+.webchat-container,
+.messages-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.webchat-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#banner h1 {
+  font-size: calc(10px + 1.5vmin);
+}
+
+#banner-icon {
+  width: 20%;
+  height: auto;
+}
+
+#webchat {
+  height: calc(100vh - 130px);
+  top: 100px;
+}
+
+@media (max-height: 600px) {
+  #webchat {
+    height: calc(100vh - 120px);
+    top: 80px;
+  }
+}
+/* .webchat__send-box {
+  position: sticky;
+  bottom: 0;
+} */
